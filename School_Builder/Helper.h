@@ -13,4 +13,6 @@ namespace Helper
 	static void ClearInputBuffer();
 	//Returns a random number
 	static int RandomNumberGenerator(int min = 1, int max = 100);
+	
+	int GetMenuChoice(const std::string& prompt);
 }

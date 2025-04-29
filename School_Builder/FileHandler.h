@@ -5,6 +5,7 @@
 #include "Helper.h"
 #include "Structs.h"
 #include "Course.h"
+#define _CRT_SECURE_NO_WARNINGS
 
 namespace FileHandler
 {

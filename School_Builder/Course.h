@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstring>
 #include "Structs.h"
+#define _CRT_SECURE_NO_WARNINGS
 
 class Course
 {

@@ -128,12 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Course.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="School.cpp" />
     <ClCompile Include="School_Builder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Course.h" />
     <ClInclude Include="FileHandler.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="School.h" />
     <ClInclude Include="Structs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
