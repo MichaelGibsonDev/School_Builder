@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <cstring>
 #include "Structs.h"
-
 
 class Course
 {
@@ -10,7 +10,7 @@ private:
 	char courseName[64];
 	int courseId;
 	CourseInstructor instructor;
-	std::vector<Student> students;
+	std::vector<Student> _students;
 
 public:
 	Course()
@@ -29,6 +29,21 @@ public:
 	const CourseInstructor& GetInstructor() const { return instructor; }
 	void SetInstructor(const CourseInstructor& newInstructor) { instructor = newInstructor; }
 
-	const std::vector<Student>& GetStudents() const { return students; }
-	void SetStudents(const std::vector<Student>& newStudents) { students = newStudents; } 
+	const std::vector<Student>& GetStudents() const { return _students; }
+	void SetStudents(const std::vector<Student>& newStudents) { _students = newStudents; }
+
+	void AddStudent(const Student& s)
+	{
+		_students.push_back(s);
+	}
+
+	void SetCourseId(int id)
+	{
+		courseId = id;
+	}
+
+	int GetCourseId() const
+	{
+		return courseId;
+	}
 };

@@ -16,5 +16,5 @@ struct CourseInstructor
 struct Student
 {
 	int studentId;
-	std::string studentName; 
+	std::string studentName;
 };
