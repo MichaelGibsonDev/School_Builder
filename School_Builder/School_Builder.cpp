@@ -7,5 +7,5 @@
 
 int main()
 {
-    std::cout << "School Builder Program Started." << std::endl;
+    std::cout << "School Builder Program Started." << std::endl; 
 }

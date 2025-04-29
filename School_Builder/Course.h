@@ -30,5 +30,5 @@ public:
 	void SetInstructor(const CourseInstructor& newInstructor) { instructor = newInstructor; }
 
 	const std::vector<Student>& GetStudents() const { return students; }
-	void SetStudents(const std::vector<Student>& newStudents) { students = newStudents; }
+	void SetStudents(const std::vector<Student>& newStudents) { students = newStudents; } 
 };

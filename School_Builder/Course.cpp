@@ -21,5 +21,5 @@ struct CourseInstructor : public Person
 
 struct Student : public Person
 {
-
+	 
 };
