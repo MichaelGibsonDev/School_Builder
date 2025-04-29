@@ -76,4 +76,59 @@ namespace FileHandler
 
 		input.close();
 	}
+
+	static void WriteCourses(const std::string& filename, const std::map<int, Course>& school)
+	{
+		std::ofstream output(filename, std::ios::binary);
+		if (!output.is_open())
+		{
+			std::cout << "Could not open courses file to write.\n";
+			return;
+		}
+
+		for (const auto& entry : school)
+		{
+			const Course& course = entry.second;
+			int courseId = course.GetCourseId();
+			const char* instructorName = course.GetInstructor().courseName.c_str();
+			int instructorId = course.GetInstructor().courseId;
+			const char* courseName = course.GetCourseName();
+
+			output.write((char*)&courseId, sizeof(courseId));
+			output.write(instructorName, 64);
+			output.write((char*)&instructorId, sizeof(instructorId));
+			output.write(courseName, 64);
+		}
+
+		output.close();
+	}
+
+	static void WriteRosters(const std::string& filename, const std::map<int, Course>& school)
+	{
+		std::ofstream output(filename, std::ios::binary);
+		if (!output.is_open())
+		{
+			std::cout << "Could not open rosters file to write.\n";
+			return;
+		}
+
+		for (const auto& entry : school)
+		{
+			const Course& course = entry.second;
+			const std::vector<Student>& students = course.GetStudents();
+
+			for (const Student& student : students)
+			{
+				int courseId = course.GetCourseId();
+				int studentId = student.studentId;
+				const char* studentName = student.studentName.c_str();
+
+				output.write((char*)&courseId, sizeof(courseId));
+				output.write((char*)&studentId, sizeof(studentId));
+				output.write(studentName, 64);
+			}
+		}
+
+		output.close();
+	}
 }
